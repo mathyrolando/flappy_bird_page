@@ -13,9 +13,7 @@
             touch-action: manipulation;
         }
         body { margin: 0;
-            font-family: 'Flappy Bird Normal', sans-serif;
-            -webkit-text-stroke: thick black;
-        }
+               }
         @font-face {
             font-family: 'Flappy Bird Normal'; /* Nombre que usarás para la fuente */
             src: url('/flappy_bird_page/FlappyBirdRegular.ttf') format('truetype'); /* Ruta a tu archivo de fuente */
@@ -26,9 +24,8 @@
             top: 10%;
             font-size: 80px;
             color: aliceblue;
-
-
-
+            font-family: 'Flappy Bird Normal', sans-serif;
+            -webkit-text-stroke: thin black;
 
             user-select: none; /* Esto evita que el contenido se seleccione */
             -webkit-user-select: none; /* Para navegadores basados en WebKit como Chrome y Safari */
@@ -54,10 +51,11 @@
 
         /* Estilo para el contenido de la modal */
         .modal-contenido {
-            background-color: #fefefe;
+            background-color: #ded996;
             margin: 10% auto;
             padding: 20px;
-            border: 1px solid #888;
+            border: 5px solid #000;
+            border-radius: 20px;
             height: 200px;
             width: 150px;
         }
@@ -81,26 +79,32 @@
             font-size: 30px;
             color: aliceblue;
             text-align: center;
+            font-family: 'Flappy Bird Normal', sans-serif;
+            -webkit-text-stroke: 1.5px black;
         }
-        #scoreLabel{
+        .tiny{
             display: block;
+            font-size: 45px;
+            color: #fd8567;
+            -webkit-text-stroke: 0 black;
         }
-        #scoreValue{
+        .big{
             display: block;
-        }
-        #bestLabel{
-            display: block;
-        }
-        #bestValue{
-            display: block;
+            font-size: 80px;
         }
 
+
         .reiniciar{
+            background: #e86202;
             position: fixed;
             left: 450px;
             bottom: 210px;
             width: 150px;
             height: 40px;
+            color: aliceblue;
+            font-family: 'Flappy Bird Normal', sans-serif;
+            font-size: 40px;
+            border: 2px solid #000;
         }
         .oportunidad{
             position: fixed;
@@ -112,7 +116,7 @@
 
 
     </style>
-  <script type="module" crossorigin src="/flappy_bird_page/assets/index-qD0SIono.js"></script>
+  <script type="module" crossorigin src="/flappy_bird_page/assets/index-mPz0Mb4-.js"></script>
 </head>
 <body>
     <div id="contador" class="numeracion-centrada">
@@ -132,17 +136,17 @@
             </span>
             -->
             <div class="textoPerdiste">
-                <span id="scoreLabel">Score</span>
-                <span id="scoreValue"></span>
-                <span id="bestLabel">Best</span>
-                <span id="bestValue"></span>
+                <span id="scoreLabel" class="tiny">SCORE</span>
+                <span id="scoreValue" class="big"></span>
+                <span id="bestLabel" class="tiny">BEST</span>
+                <span id="bestValue" class="big"></span>
             </div>
 
 
         </div>
 
         <button id="reinicio" class="reiniciar">
-            Restart
+            RESTART
         </button>
         <button id="oportunidad" class="oportunidad">
             Otra oportunidad
