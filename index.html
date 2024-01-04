@@ -9,6 +9,9 @@
           maximum-scale=1.0,
           user-scalable=no">
     <style>
+        * {
+            touch-action: manipulation;
+        }
         body { margin: 0;
             font-family: 'Flappy Bird Normal', sans-serif;
             -webkit-text-stroke: thick black;
@@ -52,11 +55,11 @@
         /* Estilo para el contenido de la modal */
         .modal-contenido {
             background-color: #fefefe;
-            margin: 7% auto;
+            margin: 10% auto;
             padding: 20px;
             border: 1px solid #888;
-            height: 320px;
-            width: 300px;
+            height: 200px;
+            width: 150px;
         }
 
         /* Estilo para el botón de cerrar */
@@ -73,18 +76,43 @@
         }
         */
 
-        .pito{
+        .textoPerdiste{
             display: block;
             font-size: 30px;
             color: aliceblue;
             text-align: center;
         }
+        #scoreLabel{
+            display: block;
+        }
+        #scoreValue{
+            display: block;
+        }
+        #bestLabel{
+            display: block;
+        }
+        #bestValue{
+            display: block;
+        }
 
-
+        .reiniciar{
+            position: fixed;
+            left: 450px;
+            bottom: 210px;
+            width: 150px;
+            height: 40px;
+        }
+        .oportunidad{
+            position: fixed;
+            right: 450px;
+            bottom: 210px;
+            width: 150px;
+            height: 40px;
+        }
 
 
     </style>
-  <script type="module" crossorigin src="/flappy_bird_page/assets/index-ZMYqYHhp.js"></script>
+  <script type="module" crossorigin src="/flappy_bird_page/assets/index-qD0SIono.js"></script>
 </head>
 <body>
     <div id="contador" class="numeracion-centrada">
@@ -95,7 +123,6 @@
     <!-- Ventana Modal -->
     <div id="miModal" class="modal">
         <div class="modal-contenido">
-            <span class="cerrar" id="cerrarModal">&times;</span>
             <!--
             <span class="concha">
                 ¡Perdiste!
@@ -104,13 +131,23 @@
                 Intentalo de nuevo
             </span>
             -->
-            <div class="pito">
-                ¡Lo puedes hacer mejor! <br/> Intentalo de nuevo
+            <div class="textoPerdiste">
+                <span id="scoreLabel">Score</span>
+                <span id="scoreValue"></span>
+                <span id="bestLabel">Best</span>
+                <span id="bestValue"></span>
             </div>
-            <button id="reinicio">
-                Reiniciar
-            </button>
+
+
         </div>
+
+        <button id="reinicio" class="reiniciar">
+            Restart
+        </button>
+        <button id="oportunidad" class="oportunidad">
+            Otra oportunidad
+        </button>
+
     </div>
 
 
