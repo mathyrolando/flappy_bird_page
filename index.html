@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <title>Flappy Bird</title>
     <style>
-        body { margin: 0; }
+        body { margin: 0;
+            font-family: 'Flappy Bird', sans-serif;
+            -webkit-text-stroke: thick black;
+        }
         @font-face {
-            font-family: 'FlappyBirdRegular'; /* Nombre que usarás para la fuente */
-            src: url('./assets/FlappyBirdRegular-meJCHGtv.ttf') format('ttf'); /* Ruta a tu archivo de fuente */
+            font-family: 'Flappy Bird'; /* Nombre que usarás para la fuente */
+            src: url('/FlappyBirdRegular.ttf') format('ttf'); /* Ruta a tu archivo de fuente */
         }
         .numeracion-centrada {
             position: absolute;
             right: 50%;
             top: 10%;
             font-size: 80px;
-            font-weight: bold;
             color: aliceblue;
-            font-family: 'FlappyBirdRegular', sans-serif;
 
 
 
@@ -27,16 +28,92 @@
             -ms-user-select: none; /* Para Internet Explorer/Edge */
 
         }
+
+
+
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        /* Estilo para el contenido de la modal */
+        .modal-contenido {
+            background-color: #fefefe;
+            margin: 7% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            height: 320px;
+            width: 300px;
+        }
+
+        /* Estilo para el botón de cerrar */
+        .cerrar {
+            float: right;
+            cursor: pointer;
+        }
+        /*
+        .concha{
+            display: block;
+            font-size: 30px;
+            color: aliceblue;
+            margin-left: 40px;
+        }
+        */
+
+        .pito{
+            display: block;
+            font-size: 30px;
+            color: aliceblue;
+            text-align: center;
+        }
+
+
+
+
     </style>
-  <script type="module" crossorigin src="./assets/index-wfOkwED6.js"></script>
+  <script type="module" crossorigin src="./assets/index-ZkruS6MH.js"></script>
 </head>
 <body>
 
     <div id="contador" class="numeracion-centrada">
         0
     </div>
-    <script src="./assets/index-wfOkwED6.js"></script>
-<!--
+
+
+    <!-- Ventana Modal -->
+    <div id="miModal" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" id="cerrarModal">&times;</span>
+            <!--
+            <span class="concha">
+                ¡Perdiste!
+            </span>
+            <span class="concha">
+                Intentalo de nuevo
+            </span>
+            -->
+            <div class="pito">
+                ¡Lo puedes hacer mejor! <br/> Intentalo de nuevo
+            </div>
+            <button id="reinicio">
+                Reiniciar
+            </button>
+        </div>
+    </div>
+
+
+
+
+
+    <!--
     <div id="myButton" class="circular-button">
         <a id="button" target="_blank" style=""
            href="https://github.com/mathyrolando/rubiks_cube"
